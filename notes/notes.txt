@@ -1,0 +1,41 @@
+Flow:
+1. User uploads file
+2. FileReader reads it as text
+3. parseIni.js turns it into a flat object
+4. shapeSaveData.js turns that into clean structured data
+5. useSaveData.js holds that in state
+6. dashboard components read from it and render
+
+
+Page Ideas:
+1. Summary
+Name
+Main
+Total Runs
+Total Playtime
+Total Wins
+Fastest Time
+Items Found
+Items Win
+Character Wins
+
+2. Rabbits
+Total Clears
+Gem Progress
+All Rabbits
+All Difficulties
+
+3. Areas
+Card View
+Attempts
+Wins
+Winrate
+
+4. Items
+Grid View
+Displays Image, Name, Red / Green background to display any Win
+Individual Difficulty Icons
+
+5. Gems
+Per character View
+same as items
