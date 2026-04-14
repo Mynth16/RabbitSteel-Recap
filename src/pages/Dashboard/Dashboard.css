@@ -1,0 +1,53 @@
+/* ========== Dashboard Page ========== */
+.dashboard-page {
+  width: 100%;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.dashboard-header h1 {
+  font-size: 24px;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.reset-button {
+  padding: 10px 16px;
+  font-size: 14px;
+  background: var(--bg-tertiary);
+  color: var(--accent-light);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reset-button:hover {
+  border-color: var(--accent);
+  background: var(--border-color);
+}
+
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dashboard-section {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}

@@ -1,3 +1,5 @@
+import './ProgressBar.css';
+
 /**
  * Animated progress bar component
  * @param {object} props

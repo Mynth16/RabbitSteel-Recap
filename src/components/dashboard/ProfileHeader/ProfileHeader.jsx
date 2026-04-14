@@ -1,6 +1,7 @@
-import { Card } from '../ui/Card';
-import { StatBadge } from '../ui/StatBadge';
-import { ProgressBar } from '../ui/ProgressBar';
+import { Card } from '../../ui/Card/Card';
+import { StatBadge } from '../../ui/StatBadge/StatBadge';
+import { ProgressBar } from '../../ui/ProgressBar/ProgressBar';
+import './ProfileHeader.css';
 
 /**
  * Displays player profile summary and overall stats

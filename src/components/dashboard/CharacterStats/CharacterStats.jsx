@@ -1,5 +1,6 @@
-import { Card } from '../ui/Card';
-import { ProgressBar } from '../ui/ProgressBar';
+import { Card } from '../../ui/Card/Card';
+import { ProgressBar } from '../../ui/ProgressBar/ProgressBar';
+import './CharacterStats.css';
 
 /**
  * Displays character-specific stats and progression

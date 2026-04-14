@@ -1,0 +1,107 @@
+/* ========== Area Winrates Component ========== */
+.area-winrates .card-content {
+  overflow-x: auto;
+}
+
+.areas-table {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 100%;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 120px 100px 80px 80px 150px;
+  gap: 12px;
+  padding: 12px;
+  background: var(--bg-tertiary);
+  border-radius: 6px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.area-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+  padding: 8px;
+  background: var(--bg-primary);
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.area-row {
+  display: grid;
+  grid-template-columns: 120px 100px 80px 80px 150px;
+  gap: 12px;
+  padding: 10px;
+  align-items: center;
+  border-bottom: 1px solid rgba(42, 47, 74, 0.5);
+  font-size: 14px;
+}
+
+.area-row:last-child {
+  border-bottom: none;
+}
+
+.col-area {
+  color: var(--accent-light);
+  font-weight: 600;
+}
+
+.area-name-cell {
+  grid-row: span 4;
+}
+
+.col-difficulty {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.col-visits,
+.col-wins {
+  text-align: center;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.col-winrate {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.winrate-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.winrate-display span {
+  min-width: 40px;
+  color: var(--accent-light);
+  font-weight: 600;
+}
+
+.winrate-display .progress-bar {
+  flex: 1;
+  height: 20px;
+}
+
+.winrate-display .progress-text {
+  font-size: 11px;
+}
+
+@media (max-width: 768px) {
+  .table-header,
+  .area-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

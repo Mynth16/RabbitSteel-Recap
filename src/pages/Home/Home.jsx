@@ -1,7 +1,8 @@
 import { useRef } from 'react';
-import { parseIni } from '../utils/parseIni';
-import { shapeSaveData } from '../utils/shapeSaveData';
-import { Card } from '../components/ui/Card';
+import { parseIni } from '../../utils/parseIni';
+import { shapeSaveData } from '../../utils/shapeSaveData';
+import { Card } from '../../components/ui/Card/Card';
+import './Home.css';
 
 /**
  * Home page: File upload entry point

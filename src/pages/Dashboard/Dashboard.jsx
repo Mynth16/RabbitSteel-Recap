@@ -1,7 +1,8 @@
-import { Card } from '../components/ui/Card';
-import { ProfileHeader } from '../components/dashboard/ProfileHeader';
-import { CharacterStats } from '../components/dashboard/CharacterStats';
-import { AreaWinrates } from '../components/dashboard/AreaWinrates';
+import { Card } from '../../components/ui/Card/Card';
+import { ProfileHeader } from '../../components/dashboard/ProfileHeader/ProfileHeader';
+import { CharacterStats } from '../../components/dashboard/CharacterStats/CharacterStats';
+import { AreaWinrates } from '../../components/dashboard/AreaWinrates/AreaWinrates';
+import './Dashboard.css';
 
 /**
  * Dashboard page: Displays parsed save data with statistics

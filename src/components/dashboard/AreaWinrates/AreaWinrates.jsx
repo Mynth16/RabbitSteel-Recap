@@ -1,5 +1,6 @@
-import { Card } from '../ui/Card';
-import { ProgressBar } from '../ui/ProgressBar';
+import { Card } from '../../ui/Card/Card';
+import { ProgressBar } from '../../ui/ProgressBar/ProgressBar';
+import './AreaWinrates.css';
 
 // Area names in order for better display
 const AREA_ORDER = [

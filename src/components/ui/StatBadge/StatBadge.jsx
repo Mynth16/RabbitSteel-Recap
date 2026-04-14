@@ -1,3 +1,5 @@
+import './StatBadge.css';
+
 /**
  * Small stat indicator badge component
  * @param {object} props

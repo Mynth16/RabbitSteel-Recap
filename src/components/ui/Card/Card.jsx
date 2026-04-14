@@ -1,3 +1,5 @@
+import './Card.css';
+
 /**
  * Reusable Card component with dark game-themed styling
  * @param {object} props
