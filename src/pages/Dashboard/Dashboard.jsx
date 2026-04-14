@@ -1,16 +1,22 @@
+import { useState } from 'react';
 import { Card } from '../../components/ui/Card/Card';
-import { ProfileHeader } from '../../components/dashboard/ProfileHeader/ProfileHeader';
-import { CharacterStats } from '../../components/dashboard/CharacterStats/CharacterStats';
-import { AreaWinrates } from '../../components/dashboard/AreaWinrates/AreaWinrates';
+import { DashboardNav } from '../../components/dashboard/DashboardNav/DashboardNav';
+import { Summary } from './Summary';
+import { Rabbits } from './Rabbits';
+import { Areas } from './Areas';
+import { Items } from './Items';
+import '../../components/dashboard/DashboardNav/DashboardNav.css';
 import './Dashboard.css';
 
 /**
- * Dashboard page: Displays parsed save data with statistics
+ * Dashboard page: Main container for dashboard pages with navigation
  * @param {object} props
  * @param {object} props.data - Parsed save data from useSaveData
  * @param {function} props.onReset - Callback to return to Home page
  */
 export function Dashboard({ data, onReset }) {
+  const [activePage, setActivePage] = useState('Summary');
+
   if (!data) {
     return (
       <div className="dashboard-page">
@@ -18,6 +24,21 @@ export function Dashboard({ data, onReset }) {
       </div>
     );
   }
+
+  const renderActivePage = () => {
+    switch (activePage) {
+      case 'Summary':
+        return <Summary data={data} />;
+      case 'Rabbits':
+        return <Rabbits data={data} />;
+      case 'Areas':
+        return <Areas data={data} />;
+      case 'Items':
+        return <Items data={data} />;
+      default:
+        return <Summary data={data} />;
+    }
+  };
 
   return (
     <div className="dashboard-page">
@@ -28,19 +49,9 @@ export function Dashboard({ data, onReset }) {
         </button>
       </div>
 
-      <div className="dashboard-content">
-        <section className="dashboard-section">
-          <ProfileHeader data={data} />
-        </section>
+      <DashboardNav activePage={activePage} onPageChange={setActivePage} />
 
-        <section className="dashboard-section">
-          <CharacterStats data={data} />
-        </section>
-
-        <section className="dashboard-section">
-          <AreaWinrates data={data} />
-        </section>
-      </div>
+      <div className="dashboard-content">{renderActivePage()}</div>
     </div>
   );
 }

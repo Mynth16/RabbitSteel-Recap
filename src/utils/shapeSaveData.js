@@ -11,7 +11,7 @@ export function shapeSaveData(parsedIni) {
 
   // Extract player-level data
   const saveInfo = parsedIni.SaveInfo || {};
-  const playtimeMs = parsedIni.Playtime?.Playtime || 0;
+  const playtimeSec = parsedIni.Playtime?.Playtime || 0;
   const totalRuns = saveInfo.runCountLocal || 0;
   const shopVisits = saveInfo.shopCountLocal_v3 || 0;
 
@@ -210,8 +210,8 @@ export function shapeSaveData(parsedIni) {
   const result = {
     player: {
       name: mainCharName || 'Unknown',
-      playtime: playtimeMs,
-      playtimeFormatted: formatPlaytime(playtimeMs),
+      playtime: playtimeSec,
+      playtimeFormatted: formatPlaytime(playtimeSec),
       totalRuns: parseInt(totalRuns),
       totalWins: totalWins,
       totalAttempts: totalAttempts,
@@ -227,20 +227,15 @@ export function shapeSaveData(parsedIni) {
 }
 
 /**
- * Formats milliseconds into a human-readable string
- * @param {number} ms - Milliseconds
+ * Formats seconds into a human-readable string
+ * @param {number} sec - Seconds
  * @returns {string} Formatted time (e.g., "19.5 days")
  */
-function formatPlaytime(ms) {
-  const seconds = Math.floor(ms / 1000);
+function formatPlaytime(sec) {
+  const seconds = Math.floor(sec);
   const minutes = Math.floor(seconds / 60);
   const hours = Math.floor(minutes / 60);
-  const days = Math.floor(hours / 24);
 
-  if (days > 0) {
-    const remainingHours = hours % 24;
-    return `${days}d ${remainingHours}h`;
-  }
   if (hours > 0) {
     const remainingMin = minutes % 60;
     return `${hours}h ${remainingMin}m`;

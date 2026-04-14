@@ -54,7 +54,7 @@ export function AreaWinrates({ data }) {
           .sort((a, b) => AREA_ORDER.indexOf(a) - AREA_ORDER.indexOf(b))
           .map((areaName) => {
             const areaData = areas[areaName];
-            const diffOrder = ['Chaos', 'Normal', 'Hard', 'Lunatic'];
+            const diffOrder = ['Cute', 'Normal', 'Hard', 'Lunar'];
 
             return (
               <div key={areaName} className="area-group">
@@ -64,11 +64,7 @@ export function AreaWinrates({ data }) {
 
                   return (
                     <div key={`${areaName}-${difficulty}`} className="area-row">
-                      {difficulty === diffOrder[0] && (
-                        <div className="col-area area-name-cell" rowSpan={4}>
-                          {areaName}
-                        </div>
-                      )}
+                      <div className="col-area">{areaName}</div>
                       <div className="col-difficulty">{difficulty}</div>
                       <div className="col-visits">{stats.visits}</div>
                       <div className="col-wins">{stats.wins}</div>
