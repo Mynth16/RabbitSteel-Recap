@@ -1,17 +1,29 @@
 import { useState } from 'react'
 import { Home } from './pages/Home/Home'
 import { Dashboard } from './pages/Dashboard/Dashboard'
+import { WizardShowcase } from './pages/WizardShowcase/WizardShowcase'
 import './App.css'
 
 function App() {
   const [saveData, setSaveData] = useState(null)
+  const [currentPage, setCurrentPage] = useState('home')
 
   const handleDataLoaded = (data) => {
     setSaveData(data)
+    setCurrentPage('dashboard')
   }
 
   const handleReset = () => {
     setSaveData(null)
+    setCurrentPage('home')
+  }
+
+  const handleViewWizard = () => {
+    setCurrentPage('wizard')
+  }
+
+  const handleBackFromWizard = () => {
+    setCurrentPage('dashboard')
   }
 
   return (
@@ -21,8 +33,10 @@ function App() {
       </header>
 
       <main className="app-main">
-        {saveData ? (
-          <Dashboard data={saveData} onReset={handleReset} />
+        {currentPage === 'wizard' && saveData ? (
+          <WizardShowcase data={saveData} onReset={handleBackFromWizard} />
+        ) : currentPage === 'dashboard' && saveData ? (
+          <Dashboard data={saveData} onReset={handleReset} onViewWizard={handleViewWizard} />
         ) : (
           <Home onDataLoaded={handleDataLoaded} />
         )}

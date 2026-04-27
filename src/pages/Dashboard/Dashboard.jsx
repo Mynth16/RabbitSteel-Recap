@@ -13,8 +13,9 @@ import './Dashboard.css';
  * @param {object} props
  * @param {object} props.data - Parsed save data from useSaveData
  * @param {function} props.onReset - Callback to return to Home page
+ * @param {function} props.onViewWizard - Callback to view wizard showcase
  */
-export function Dashboard({ data, onReset }) {
+export function Dashboard({ data, onReset, onViewWizard }) {
   const [activePage, setActivePage] = useState('Summary');
 
   if (!data) {
@@ -44,9 +45,14 @@ export function Dashboard({ data, onReset }) {
     <div className="dashboard-page">
       <div className="dashboard-header">
         <h1>Save Data Dashboard</h1>
-        <button className="reset-button" onClick={onReset}>
-          Upload New File
-        </button>
+        <div className="header-buttons">
+          <button className="wizard-button" onClick={onViewWizard}>
+            👁️ View Wizard
+          </button>
+          <button className="reset-button" onClick={onReset}>
+            Upload New File
+          </button>
+        </div>
       </div>
 
       <DashboardNav activePage={activePage} onPageChange={setActivePage} />

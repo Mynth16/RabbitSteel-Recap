@@ -18,6 +18,29 @@
   color: var(--text-primary);
 }
 
+.header-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.wizard-button {
+  padding: 10px 16px;
+  font-size: 14px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.wizard-button:hover {
+  background: #9b7edb;
+  box-shadow: 0 4px 12px rgba(124, 92, 219, 0.3);
+}
+
 .reset-button {
   padding: 10px 16px;
   font-size: 14px;

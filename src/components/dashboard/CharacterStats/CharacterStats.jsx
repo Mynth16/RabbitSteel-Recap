@@ -17,6 +17,12 @@ export function CharacterStats({ data }) {
   }
 
   const DIFFICULTIES = ['Cute', 'Normal', 'Hard', 'Lunar'];
+  const DIFFICULTY_ICONS = {
+    Cute: '○',
+    Normal: '□',
+    Hard: '◇',
+    Lunar: '🌙'
+  };
 
   return (
     <Card title={`Characters (${charList.length})`} className="character-stats">
@@ -30,53 +36,51 @@ export function CharacterStats({ data }) {
           return (
             <div key={char.id} className="character-card">
               <div className="character-header">
-                <div className="character-info">
+                <div className="character-left-section">
                   <h3 className="character-name" style={{ color: char.color }}>
                     {char.name}
                   </h3>
+                  <div className="character-stats">
+                    <div className="stat-row">
+                      <span>Total Wins:</span>
+                      <strong>{char.TotalWins}</strong>
+                    </div>
+                    <div className="stat-row">
+                      <span>Offline:</span>
+                      <strong>{char.OfflineWins}</strong>
+                    </div>
+                    <div className="stat-row">
+                      <span>Online:</span>
+                      <strong>{char.OnlineWins}</strong>
+                    </div>
+                  </div>
                 </div>
-                {/* Character icon */}
-                <img
-                  src={`/src/assets/icon-r${char.id}.png`}
-                  alt={char.name}
-                  className="character-icon"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                  }}
-                />
+
+                <div className="character-sprite-section">
+                  {/* Character icon/sprite */}
+                  <img
+                    src={`/src/assets/icons/icon-r${char.id}.png`}
+                    alt={char.name}
+                    className="character-icon"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                </div>
               </div>
 
-              <div className="character-stats">
-                <div className="stat-row">
-                  <span>Total Wins:</span>
-                  <strong>{char.TotalWins}</strong>
-                </div>
-                <div className="stat-row">
-                  <span>Offline:</span>
-                  <strong>{char.OfflineWins}</strong>
-                </div>
-                <div className="stat-row">
-                  <span>Online:</span>
-                  <strong>{char.OnlineWins}</strong>
-                </div>
-
-                {char.TotalWins > 0 && (
-                  <div className="difficulty-breakdown">
-                    <h4 style={{ marginTop: '12px', marginBottom: '8px' }}>
-                      By Difficulty (Offline)
-                    </h4>
-                    {DIFFICULTIES.map((diff) => {
-                      const key = `Offline${diff}Count`;
-                      const count = char[key] || 0;
-                      return (
-                        <div key={diff} className="difficulty-row">
-                          <span className="diff-label">{diff}:</span>
-                          <span className="diff-count">{count}</span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
+              {/* Difficulty icons row */}
+              <div className="character-difficulties">
+                {DIFFICULTIES.map((diff) => {
+                  const key = `Offline${diff}Count`;
+                  const count = char[key] || 0;
+                  return (
+                    <div key={diff} className="difficulty-icon">
+                      <span>{DIFFICULTY_ICONS[diff]}</span>
+                      <span className="difficulty-icon-count">{count}</span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           );

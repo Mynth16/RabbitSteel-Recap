@@ -1,0 +1,188 @@
+/* ========== Wizard Showcase Page ========== */
+.wizard-showcase {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.wizard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.wizard-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.btn-back {
+  padding: 10px 20px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background: #9b7edb;
+  box-shadow: 0 4px 12px rgba(124, 92, 219, 0.3);
+}
+
+.wizard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  padding: 20px;
+}
+
+/* Template card using background image */
+.wizard-card-template {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.card-template-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Stat number overlays - positioned absolutely on top of image */
+.stat-overlay {
+  position: absolute;
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1;
+  width: auto;
+  overflow: visible;
+  font-size: 35px;
+  font-weight: 900;
+  color: white;
+  text-shadow: 
+    -2px -2px 0 #2a2a2a,
+    2px -2px 0 #2a2a2a,
+    -2px 2px 0 #2a2a2a,
+    2px 2px 0 #2a2a2a,
+    -2px 0px 0 #2a2a2a,
+    2px 0px 0 #2a2a2a,
+    0px -2px 0 #2a2a2a,
+    0px 2px 0 #2a2a2a;
+  -webkit-text-stroke: 1.5px #2a2a2a;
+  paint-order: stroke fill;
+}
+
+/* Total Wins - right side of "Total Wins:" label */
+.stat-total {
+  left: 45%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+}
+
+/* Offline - right side of "Offline:" label */
+.stat-offline {
+  left: 35%;
+  top: 52%;
+  transform: translate(50%, -50%);
+}
+
+/* Online - right side of "Online:" label */
+.stat-online {
+  left: 35%;
+  top: 60%;
+  transform: translate(50%, -50%);
+}
+
+/* Difficulty count overlays at bottom */
+.difficulty-count {
+  position: absolute;
+  bottom: 8%;
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1;
+  width: auto;
+  overflow: visible;
+  font-size: 42px;
+  font-weight: 900;
+  color: white;
+  text-shadow: 
+    -1.5px -1.5px 0 #2a2a2a,
+    1.5px -1.5px 0 #2a2a2a,
+    -1.5px 1.5px 0 #2a2a2a,
+    1.5px 1.5px 0 #2a2a2a,
+    -1.5px 0px 0 #2a2a2a,
+    1.5px 0px 0 #2a2a2a,
+    0px -1.5px 0 #2a2a2a,
+    0px 1.5px 0 #2a2a2a;
+  -webkit-text-stroke: 1px #2a2a2a;
+  paint-order: stroke fill;
+}
+
+/* Position for each difficulty icon number */
+.diff-cute {
+  left: 28%;
+  bottom: 25%;
+  transform: translate(-50%, 50%);
+}
+
+.diff-normal {
+  left: 38%;
+  bottom: 25%;
+  transform: translate(-50%, 50%);
+}
+
+.diff-hard {
+  left: 48%;
+  bottom: 25%;
+  transform: translate(-50%, 50%);
+}
+
+.diff-lunar {
+  left: 58%;
+  bottom: 25%;
+  transform: translate(-50%, 50%);
+}
+
+@media (max-width: 768px) {
+  .wizard-showcase {
+    padding: 20px;
+  }
+
+  .wizard-header {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .wizard-header h1 {
+    font-size: 24px;
+  }
+
+  .wizard-card-template {
+    max-width: 100%;
+    aspect-ratio: 16 / 10;
+  }
+
+  .stat-overlay {
+    font-size: 36px;
+  }
+
+  .difficulty-count {
+    font-size: 28px;
+  }
+}
